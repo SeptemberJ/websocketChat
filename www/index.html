@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>websocket</title>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="author" content="Wayou">
+        <meta name="description" content="hichat | a simple chat application built with node.js and websocket">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>hichat</title>
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+	</head>
+	<body>
+		<div class="wrapper">
+            <div class="banner">
+                <h1>留白聊天室</h1>
+                <span id="status"></span>
+            </div>
+            <div id="historyMsg">
+            </div>
+            <div class="controls" >
+                <div class="items">
+                    <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                    <input id="emoji" type="button" value="表情" title="emoji" />
+                    <label for="sendImage" class="imageLable">
+                        <input type="button" value="图片"  />
+                        <input id="sendImage" type="file" value="image"/>
+                    </label>
+                    <input id="clearBtn" type="button" value="clear" title="clear screen" />
+                </div>
+                <textarea id="messageInput" placeHolder="enter to send"></textarea>
+                <input id="sendBtn" type="button" value="SEND">
+                <div id="emojiWrapper">
+                </div>
+            </div>
+        </div>
+        <div id="loginWrapper">
+            <p id="info">connecting to server...</p>
+            <div id="nickWrapper">
+                <input type="text" placeHolder="nickname" id="nicknameInput" />
+                <input type="button" value="确定" id="loginBtn" />
+            </div>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/hichat.js"></script>
+
+		<!-- <h1>hellow world!!!22</h1>
+		<button id="sendBtn">Send</button>
+		<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript">
+			var socket=io.connect(),
+				button=document.getElementById('sendBtn');
+			button.onclick=function(){
+				socket.emit('my other event', 'send message:' + new Date());
+			}
+			socket.on('name', function (data) {
+			    console.log('received name:' + data.username);
+			});
+		</script> -->
+	</body>
+</html>
